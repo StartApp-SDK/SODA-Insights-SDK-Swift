@@ -1,0 +1,6 @@
+framework module SodaInsightsSdkPrivate {
+  umbrella header "SodaInsightsSdkPrivate.h"
+
+  export *
+  module * { export * }
+}

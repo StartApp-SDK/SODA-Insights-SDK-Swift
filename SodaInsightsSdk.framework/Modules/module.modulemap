@@ -1,0 +1,11 @@
+framework module SodaInsightsSdk {
+  umbrella header "SodaInsightsSdk.h"
+
+  export *
+  module * { export * }
+}
+
+module SodaInsightsSdk.Swift {
+    header "SodaInsightsSdk-Swift.h"
+    requires objc
+}
