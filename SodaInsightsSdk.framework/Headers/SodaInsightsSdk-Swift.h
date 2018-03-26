@@ -173,6 +173,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 #if __has_feature(modules)
 @import ObjectiveC;
+@import Foundation;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -184,6 +185,58 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #pragma clang diagnostic ignored "-Wnullability"
 
 SWIFT_MODULE_NAMESPACE_PUSH("SodaInsightsSdk")
+/// User Profile - SIS_AgeRange enum description.
+typedef SWIFT_ENUM(NSUInteger, SIS_AgeRange) {
+/// range18_24 description
+  SIS_AgeRangeRange18_24 = 1,
+/// range25_34 description
+  SIS_AgeRangeRange25_34 = 2,
+/// range35_44 description
+  SIS_AgeRangeRange35_44 = 3,
+/// range45_54 description
+  SIS_AgeRangeRange45_54 = 4,
+/// range55_plus description
+  SIS_AgeRangeRange55_plus = 5,
+};
+
+/// User Profile - SIS_BodyType enum description.
+typedef SWIFT_ENUM(NSUInteger, SIS_BodyType) {
+/// slender description
+  SIS_BodyTypeSlender = 0,
+/// fewExtraPounds description
+  SIS_BodyTypeFewExtraPounds = 1,
+/// petite description
+  SIS_BodyTypePetite = 2,
+/// medium description
+  SIS_BodyTypeMedium = 3,
+/// wellBuilt description
+  SIS_BodyTypeWellBuilt = 4,
+/// overweight description
+  SIS_BodyTypeOverweight = 5,
+};
+
+/// User Profile - SIS_EducationLevel enum description.
+typedef SWIFT_ENUM(NSInteger, SIS_EducationLevel) {
+/// unknown description
+  SIS_EducationLevelUnknown = -1,
+/// earlyChildhood description
+  SIS_EducationLevelEarlyChildhood = 0,
+/// primaryOrEquivalent description
+  SIS_EducationLevelPrimaryOrEquivalent = 1,
+/// secondaryOrEquivalent description
+  SIS_EducationLevelSecondaryOrEquivalent = 2,
+/// bachelorOrEquivalent description
+  SIS_EducationLevelBachelorOrEquivalent = 3,
+/// masterOrEquivalent description
+  SIS_EducationLevelMasterOrEquivalent = 4,
+/// doctoralOrEquivalent description
+  SIS_EducationLevelDoctoralOrEquivalent = 5,
+/// stillStudying description
+  SIS_EducationLevelStillStudying = 6,
+/// professionalEducation description
+  SIS_EducationLevelProfessionalEducation = 7,
+};
+
 /// SodaInsightsSdk error codes.
 typedef SWIFT_ENUM(NSInteger, SIS_ErrorCodes) {
 /// API call succeeded
@@ -214,6 +267,32 @@ typedef SWIFT_ENUM(NSInteger, SIS_ErrorCodes) {
 ///   </li>
 /// </ul>
   SIS_ErrorCodesAlreadyInitialized = 8,
+/// Some unexpected internal error has occurred. Please refer to console log for more info and contact StartApp.
+  SIS_ErrorCodesInternalError = 9,
+/// Server is busy or temporary unavailable, try again later
+  SIS_ErrorCodesServerNotAvailableTryAgainLater = 10,
+};
+
+/// User Profile - SIS_Ethnicity enum description.
+typedef SWIFT_ENUM(NSUInteger, SIS_Ethnicity) {
+/// caucasian description
+  SIS_EthnicityCaucasian = 0,
+/// black description
+  SIS_EthnicityBlack = 1,
+/// nativeAmerican description
+  SIS_EthnicityNativeAmerican = 2,
+/// asian description
+  SIS_EthnicityAsian = 3,
+/// hawaiian description
+  SIS_EthnicityHawaiian = 4,
+/// hispanic description
+  SIS_EthnicityHispanic = 5,
+/// middleEastern description
+  SIS_EthnicityMiddleEastern = 6,
+/// mixed description
+  SIS_EthnicityMixed = 7,
+/// indian description
+  SIS_EthnicityIndian = 8,
 };
 
 /// Event Activity type.
@@ -362,6 +441,98 @@ typedef SWIFT_ENUM(NSInteger, SIS_Gender) {
   SIS_GenderMale = 0,
 /// female description
   SIS_GenderFemale = 1,
+};
+
+/// User Profile - SIS_GenderInterest enum description.
+typedef SWIFT_ENUM(NSUInteger, SIS_GenderInterest) {
+/// male description
+  SIS_GenderInterestMale = 0,
+/// female description
+  SIS_GenderInterestFemale = 1,
+/// both description
+  SIS_GenderInterestBoth = 2,
+};
+
+/// User Profile - SIS_HabitLevel enum description.
+typedef SWIFT_ENUM(NSUInteger, SIS_HabitLevel) {
+/// no description
+  SIS_HabitLevelNo = 0,
+/// yes description
+  SIS_HabitLevelYes = 1,
+/// occasionally description
+  SIS_HabitLevelOccasionally = 2,
+/// tryingToQuit description
+  SIS_HabitLevelTryingToQuit = 3,
+};
+
+/// User Profile - SIS_LocationContext enum description.
+typedef SWIFT_ENUM(NSUInteger, SIS_LocationContext) {
+/// unknown description
+  SIS_LocationContextUnknown = 0,
+/// home description
+  SIS_LocationContextHome = 1,
+/// work description
+  SIS_LocationContextWork = 2,
+/// education description
+  SIS_LocationContextEducation = 3,
+};
+
+/// User Profile - SIS_MaritalStatus enum description.
+typedef SWIFT_ENUM(NSUInteger, SIS_MaritalStatus) {
+/// married description
+  SIS_MaritalStatusMarried = 0,
+/// livingCommonLaw description
+  SIS_MaritalStatusLivingCommonLaw = 1,
+/// widowed description
+  SIS_MaritalStatusWidowed = 2,
+/// separated description
+  SIS_MaritalStatusSeparated = 3,
+/// divorced description
+  SIS_MaritalStatusDivorced = 4,
+/// single description
+  SIS_MaritalStatusSingle = 5,
+};
+
+/// User Profile - SIS_SexualOrientation enum description.
+typedef SWIFT_ENUM(NSUInteger, SIS_SexualOrientation) {
+/// heterosexual description
+  SIS_SexualOrientationHeterosexual = 0,
+/// homosexual description
+  SIS_SexualOrientationHomosexual = 1,
+/// bisexual description
+  SIS_SexualOrientationBisexual = 2,
+/// asexual description
+  SIS_SexualOrientationAsexual = 3,
+};
+
+/// User Profile - SIS_SocialInterest enum description.
+typedef SWIFT_ENUM(NSUInteger, SIS_SocialInterest) {
+/// all description
+  SIS_SocialInterestAll = 0,
+/// dating description
+  SIS_SocialInterestDating = 1,
+/// seriousRelationship description
+  SIS_SocialInterestSeriousRelationship = 2,
+/// friends description
+  SIS_SocialInterestFriends = 3,
+/// networking description
+  SIS_SocialInterestNetworking = 4,
+};
+
+/// User Profile - SIS_VerificationChannel enum description.
+typedef SWIFT_ENUM(NSUInteger, SIS_VerificationChannel) {
+/// google description
+  SIS_VerificationChannelGoogle = 0,
+/// facebook description
+  SIS_VerificationChannelFacebook = 1,
+/// twitter description
+  SIS_VerificationChannelTwitter = 2,
+/// linkedin description
+  SIS_VerificationChannelLinkedin = 3,
+/// email description
+  SIS_VerificationChannelEmail = 4,
+/// phoneNumber description
+  SIS_VerificationChannelPhoneNumber = 5,
 };
 
 
@@ -526,6 +697,178 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SodaInsights
 /// Error code (SIS_ErrorCodes)
 /// Possible values: .success, .invalidParameters
 - (enum SIS_ErrorCodes)setSubProductId:(NSString * _Nonnull)subProductId;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
+@end
+
+
+/// SodaInsightsUserProfile description.
+SWIFT_CLASS("_TtC15SodaInsightsSdk23SodaInsightsUserProfile")
+@interface SodaInsightsUserProfile : NSObject
+/// setJoinDate description
+- (void)setJoinDate:(NSDate * _Nonnull)date;
+/// setZipCode description
+- (void)setZipCode:(NSString * _Nonnull)zip;
+/// setBirthDate description
+- (void)setBirthDate:(NSDate * _Nonnull)date;
+/// setBirthCountry description
+- (void)setBirthCountry:(NSString * _Nonnull)country;
+/// setGender description
+- (void)setGender:(enum SIS_Gender)gender;
+/// setAge description
+- (void)setAge:(NSUInteger)age;
+/// setAgeRange description
+- (void)setAgeRange:(NSString * _Nonnull)ageRange;
+/// setIsKid description
+- (void)setIsKid:(BOOL)isKid;
+/// setIsParent description
+- (void)setIsParent:(BOOL)isParent;
+/// setIsGrandParent description
+- (void)setIsGrandParent:(BOOL)isGrandParent;
+/// setKidsNum description
+- (void)setKidsNum:(NSUInteger)kidsNum;
+/// setEducationLevel description (SIS_EducationLevel enum can be used)
+- (void)setEducationLevel:(NSInteger)educationLevel;
+/// setEthnicity description (SIS_Ethnicity enum can be used)
+- (void)setEthnicity:(NSUInteger)ethnicity;
+/// setMaritalStatus description
+- (void)setMaritalStatus:(enum SIS_MaritalStatus)maritalStatus;
+/// setIncome description
+- (void)setIncome:(uint32_t)income;
+/// setIncomeCurrency description
+- (void)setIncomeCurrency:(NSString * _Nonnull)incomeCurrency;
+/// setLocationLongitude description
+- (void)setLocationLongitude:(double)longitude;
+/// setLocationLatitude description
+- (void)setLocationLatitude:(double)latitude;
+/// setLocationAccuracy description
+- (void)setLocationAccuracy:(double)accuracy;
+/// setLocationTimestamp description (in seconds)
+- (void)setLocationTimestamp:(uint32_t)timestamp;
+/// setIsPaid description
+- (void)setIsPaid:(BOOL)isPaid;
+/// setGenderInterest description
+- (void)setGenderInterest:(enum SIS_GenderInterest)genderInterest;
+/// setMinAgeInterest description
+- (void)setMinAgeInterest:(NSUInteger)minAgeInterest;
+/// setMaxAgeInterest description
+- (void)setMaxAgeInterest:(NSUInteger)maxAgeInterest;
+/// setUpdateTimestamp description
+- (void)setUpdateTimestamp:(uint32_t)timestamp;
+/// setLookingFor description
+- (void)setLookingFor:(NSUInteger)lookingFor;
+/// setSexualOrientation description
+- (void)setSexualOrientation:(enum SIS_SexualOrientation)sexOrientation;
+/// setOccupation description
+- (void)setOccupation:(NSString * _Nonnull)occupation;
+/// setHeight description
+- (void)setHeight:(NSUInteger)height;
+/// setWeight description
+- (void)setWeight:(NSUInteger)weight;
+/// setSmokingHabit description
+- (void)setSmokingHabit:(enum SIS_HabitLevel)habitLevel;
+/// setDrinkingHabit description
+- (void)setDrinkingHabit:(enum SIS_HabitLevel)habitLevel;
+/// setBodyType description
+- (void)setBodyType:(enum SIS_BodyType)bodyType;
+/// setDescriptionText description
+- (void)setDescriptionText:(NSString * _Nonnull)desc;
+/// setProfilePicturesNumber description
+- (void)setProfilePicturesNumber:(NSUInteger)profilePicsNum;
+/// setVerificationChannel description (SIS_VerificationChannel enum can be used)
+- (void)setVerificationChannel:(NSUInteger)channel;
+/// gender description - .unknown if this field has not been set.
+- (enum SIS_Gender)gender SWIFT_WARN_UNUSED_RESULT;
+/// ageRangeCategory description - SIS_AgeRange enum or ‘-100’ if this field has not been set.
+- (NSInteger)ageRangeCategory SWIFT_WARN_UNUSED_RESULT;
+/// isParent description - ‘-100’ if this field has not been set.
+- (NSInteger)isParent SWIFT_WARN_UNUSED_RESULT;
+/// educationLevel description - (see SIS_EducationLevel for reference) or ‘-100’ if this field has not been set.
+- (NSInteger)educationLevel SWIFT_WARN_UNUSED_RESULT;
+/// ethnicity description (see SIS_Ethnicity values for reference) or ‘-100’ if this field has not been set.
+- (NSInteger)ethnicity SWIFT_WARN_UNUSED_RESULT;
+/// maritalStatus description (see SIS_MaritalStatus values for reference) or ‘-100’ if this field has not been set.
+- (NSInteger)maritalStatus SWIFT_WARN_UNUSED_RESULT;
+/// locationLongitude description - kCLLocationCoordinate2DInvalid.longitude if this field has not been set.
+- (double)locationLongitude SWIFT_WARN_UNUSED_RESULT;
+/// locationLatitude description - kCLLocationCoordinate2DInvalid.latitude if this field has not been set.
+- (double)locationLatitude SWIFT_WARN_UNUSED_RESULT;
+/// locationAccuracy description - 0 if this field has not been set.
+- (double)locationAccuracy SWIFT_WARN_UNUSED_RESULT;
+/// locationTimestamp description (in seconds) - 0 if this field has not been set.
+- (uint32_t)locationTimestamp SWIFT_WARN_UNUSED_RESULT;
+/// genderInterest description - (see SIS_GenderInterest for reference) or ‘-100’ if this field has not been set.
+- (NSInteger)genderInterest SWIFT_WARN_UNUSED_RESULT;
+/// minAgeInterest description - positive age or ‘-100’ if this field has not been set.
+- (NSInteger)minAgeInterest SWIFT_WARN_UNUSED_RESULT;
+/// maxAgeInterest description - positive age or ‘-100’ if this field has not been set.
+- (NSInteger)maxAgeInterest SWIFT_WARN_UNUSED_RESULT;
+/// currentCountry description - nil if this field has not been set.
+- (NSString * _Nullable)currentCountry SWIFT_WARN_UNUSED_RESULT;
+/// currentCity description - nil if this field has not been set.
+- (NSString * _Nullable)currentCity SWIFT_WARN_UNUSED_RESULT;
+/// currentRegion description - nil if this field has not been set.
+- (NSString * _Nullable)currentRegion SWIFT_WARN_UNUSED_RESULT;
+/// mainCountry description - nil if this field has not been set.
+- (NSString * _Nullable)mainCountry SWIFT_WARN_UNUSED_RESULT;
+/// mainCity description - nil if this field has not been set.
+- (NSString * _Nullable)mainCity SWIFT_WARN_UNUSED_RESULT;
+/// mainRegion description - nil if this field has not been set.
+- (NSString * _Nullable)mainRegion SWIFT_WARN_UNUSED_RESULT;
+/// isInfluencer description - 1 or 0, ‘-100’ if this field has not been set.
+- (NSInteger)isInfluencer SWIFT_WARN_UNUSED_RESULT;
+/// isSharer description - 1 or 0, ‘-100’ if this field has not been set.
+- (NSInteger)isSharer SWIFT_WARN_UNUSED_RESULT;
+/// isTraveler description - 1 or 0, ‘-100’ if this field has not been set.
+- (NSInteger)isTraveler SWIFT_WARN_UNUSED_RESULT;
+/// isGamer description - 1 or 0, ‘-100’ if this field has not been set.
+- (NSInteger)isGamer SWIFT_WARN_UNUSED_RESULT;
+/// isEarlyAdopter description - 1 or 0, ‘-100’ if this field has not been set.
+- (NSInteger)isEarlyAdopter SWIFT_WARN_UNUSED_RESULT;
+/// segments description - nil if this field has not been set.
+- (NSArray<NSString *> * _Nullable)segments SWIFT_WARN_UNUSED_RESULT;
+/// isPayer description - 1 or 0, ‘-100’ if this field has not been set.
+- (NSInteger)isPayer SWIFT_WARN_UNUSED_RESULT;
+/// locationContext, (see SIS_LocationContext for reference) or ‘-100’ if this field has not been set.
+- (NSInteger)locationContext SWIFT_WARN_UNUSED_RESULT;
+/// loyaltyScore description - (1-7) or ‘-100’ if this field has not been set.
+- (NSInteger)loyaltyScore SWIFT_WARN_UNUSED_RESULT;
+/// trustScore description - (1-7) or ‘-100’ if this field has not been set.
+- (NSInteger)trustScore SWIFT_WARN_UNUSED_RESULT;
+/// Public init method
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+/// Sends User Profile
+///
+/// returns:
+///
+/// Error code (SIS_ErrorCodes)
+/// Possible values: .initalizationError, .insightsDisabled, .invalidParameters, .success
+- (enum SIS_ErrorCodes)send;
+@end
+
+
+/// SodaInsightsUserProfileFetchMetaData description.
+SWIFT_CLASS("_TtC15SodaInsightsSdk36SodaInsightsUserProfileFetchMetaData")
+@interface SodaInsightsUserProfileFetchMetaData : NSObject
+/// setLongitude description
+- (void)setLongitude:(double)lon;
+/// setLatitude description
+- (void)setLatitude:(double)lat;
+/// description methods returns the meta data description string - for logging purposes only.
+@property (nonatomic, readonly, copy) NSString * _Nonnull description;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+/// SodaInsightsUserProfileManager description.
+SWIFT_CLASS("_TtC15SodaInsightsSdk30SodaInsightsUserProfileManager")
+@interface SodaInsightsUserProfileManager : NSObject
+/// Soda Insights User Profile Manager shared instance
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SodaInsightsUserProfileManager * _Nonnull sharedInstance;)
++ (SodaInsightsUserProfileManager * _Nonnull)sharedInstance SWIFT_WARN_UNUSED_RESULT;
+/// Retrieves the User Profile from the server.
+/// In case of the initialization error the completion block is is executed on the calling queue.
+/// In other cases the completion block is called on custom dedicated serial queue.
+- (void)getUserProfileWithMetaData:(SodaInsightsUserProfileFetchMetaData * _Nonnull)metaData andCompletion:(void (^ _Nonnull)(SodaInsightsUserProfile * _Nullable, enum SIS_ErrorCodes))completion;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 @end
 
