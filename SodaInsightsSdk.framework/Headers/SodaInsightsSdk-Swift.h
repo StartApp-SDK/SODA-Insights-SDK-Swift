@@ -270,28 +270,6 @@ typedef SWIFT_ENUM(NSInteger, SIS_ErrorCodes) {
   SIS_ErrorCodesServerNotAvailableTryAgainLater = 10,
 };
 
-/// User Profile - SIS_Ethnicity enum description.
-typedef SWIFT_ENUM(NSUInteger, SIS_Ethnicity) {
-/// caucasian description
-  SIS_EthnicityCaucasian = 0,
-/// black description
-  SIS_EthnicityBlack = 1,
-/// nativeAmerican description
-  SIS_EthnicityNativeAmerican = 2,
-/// asian description
-  SIS_EthnicityAsian = 3,
-/// hawaiian description
-  SIS_EthnicityHawaiian = 4,
-/// hispanic description
-  SIS_EthnicityHispanic = 5,
-/// middleEastern description
-  SIS_EthnicityMiddleEastern = 6,
-/// mixed description
-  SIS_EthnicityMixed = 7,
-/// indian description
-  SIS_EthnicityIndian = 8,
-};
-
 /// Event Activity type.
 typedef SWIFT_ENUM(NSInteger, SIS_EventActivityType) {
 /// unknown description
@@ -440,16 +418,6 @@ typedef SWIFT_ENUM(NSInteger, SIS_Gender) {
   SIS_GenderFemale = 1,
 };
 
-/// User Profile - SIS_GenderInterest enum description.
-typedef SWIFT_ENUM(NSUInteger, SIS_GenderInterest) {
-/// male description
-  SIS_GenderInterestMale = 0,
-/// female description
-  SIS_GenderInterestFemale = 1,
-/// both description
-  SIS_GenderInterestBoth = 2,
-};
-
 /// User Profile - SIS_HabitLevel enum description.
 typedef SWIFT_ENUM(NSUInteger, SIS_HabitLevel) {
 /// no description
@@ -488,18 +456,6 @@ typedef SWIFT_ENUM(NSUInteger, SIS_MaritalStatus) {
   SIS_MaritalStatusDivorced = 4,
 /// single description
   SIS_MaritalStatusSingle = 5,
-};
-
-/// User Profile - SIS_SexualOrientation enum description.
-typedef SWIFT_ENUM(NSUInteger, SIS_SexualOrientation) {
-/// heterosexual description
-  SIS_SexualOrientationHeterosexual = 0,
-/// homosexual description
-  SIS_SexualOrientationHomosexual = 1,
-/// bisexual description
-  SIS_SexualOrientationBisexual = 2,
-/// asexual description
-  SIS_SexualOrientationAsexual = 3,
 };
 
 /// User Profile - SIS_SocialInterest enum description.
@@ -727,8 +683,6 @@ SWIFT_CLASS("_TtC15SodaInsightsSdk23SodaInsightsUserProfile")
 - (void)setKidsNum:(NSUInteger)kidsNum;
 /// setEducationLevel description (SIS_EducationLevel enum can be used)
 - (void)setEducationLevel:(NSInteger)educationLevel;
-/// setEthnicity description (SIS_Ethnicity enum can be used)
-- (void)setEthnicity:(NSUInteger)ethnicity;
 /// setMaritalStatus description
 - (void)setMaritalStatus:(enum SIS_MaritalStatus)maritalStatus;
 /// setIncome description
@@ -745,8 +699,6 @@ SWIFT_CLASS("_TtC15SodaInsightsSdk23SodaInsightsUserProfile")
 - (void)setLocationTimestamp:(uint32_t)timestamp;
 /// setIsPaid description
 - (void)setIsPaid:(BOOL)isPaid;
-/// setGenderInterest description
-- (void)setGenderInterest:(enum SIS_GenderInterest)genderInterest;
 /// setMinAgeInterest description
 - (void)setMinAgeInterest:(NSUInteger)minAgeInterest;
 /// setMaxAgeInterest description
@@ -755,8 +707,6 @@ SWIFT_CLASS("_TtC15SodaInsightsSdk23SodaInsightsUserProfile")
 - (void)setUpdateTimestamp:(uint32_t)timestamp;
 /// setLookingFor description
 - (void)setLookingFor:(NSUInteger)lookingFor;
-/// setSexualOrientation description
-- (void)setSexualOrientation:(enum SIS_SexualOrientation)sexOrientation;
 /// setOccupation description
 - (void)setOccupation:(NSString * _Nonnull)occupation;
 /// setHeight description
@@ -783,8 +733,6 @@ SWIFT_CLASS("_TtC15SodaInsightsSdk23SodaInsightsUserProfile")
 - (NSInteger)isParent SWIFT_WARN_UNUSED_RESULT;
 /// educationLevel description - (see SIS_EducationLevel for reference) or ‘-100’ if this field has not been set.
 - (NSInteger)educationLevel SWIFT_WARN_UNUSED_RESULT;
-/// ethnicity description (see SIS_Ethnicity values for reference) or ‘-100’ if this field has not been set.
-- (NSInteger)ethnicity SWIFT_WARN_UNUSED_RESULT;
 /// maritalStatus description (see SIS_MaritalStatus values for reference) or ‘-100’ if this field has not been set.
 - (NSInteger)maritalStatus SWIFT_WARN_UNUSED_RESULT;
 /// locationLongitude description - kCLLocationCoordinate2DInvalid.longitude if this field has not been set.
@@ -795,8 +743,6 @@ SWIFT_CLASS("_TtC15SodaInsightsSdk23SodaInsightsUserProfile")
 - (double)locationAccuracy SWIFT_WARN_UNUSED_RESULT;
 /// locationTimestamp description (in seconds) - 0 if this field has not been set.
 - (uint32_t)locationTimestamp SWIFT_WARN_UNUSED_RESULT;
-/// genderInterest description - (see SIS_GenderInterest for reference) or ‘-100’ if this field has not been set.
-- (NSInteger)genderInterest SWIFT_WARN_UNUSED_RESULT;
 /// minAgeInterest description - positive age or ‘-100’ if this field has not been set.
 - (NSInteger)minAgeInterest SWIFT_WARN_UNUSED_RESULT;
 /// maxAgeInterest description - positive age or ‘-100’ if this field has not been set.
