@@ -356,6 +356,8 @@ typedef SWIFT_ENUM(NSInteger, SIS_EventActivityType) {
   SIS_EventActivityTypeDownload = 39,
 /// withdraw description
   SIS_EventActivityTypeWithdraw = 40,
+/// consent description
+  SIS_EventActivityTypeConsent = 41,
 };
 
 /// Event Target Content type.
@@ -651,6 +653,20 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SodaInsights
 /// Error code (SIS_ErrorCodes)
 /// Possible values: .success, .invalidParameters
 - (enum SIS_ErrorCodes)setSubProductId:(NSString * _Nonnull)subProductId;
+/// Soda Insights SDK User Consent handling
+/// \param type non-empty string. Shouldn’t exceed 100 characters. Possible supported values: “LOCATION_ACCESS_AUTHORIZED_WHEN_IN_USE”, “LOCATION_ACCESS_AUTHORIZED_ALWAYS”, “LOCATION_ACCESS_DENIED”.
+/// In case of location access consent type, ‘enabled’ input parameter value will not be used.
+///
+/// \param timestamp time interval since 1970 in milliseconds of user consent
+///
+/// \param enabled user consent status - true/false
+///
+///
+/// returns:
+///
+/// Error code (SIS_ErrorCodes)
+/// Possible values: .success, .invalidParameters, .initalizationError, .insightsDisabled
+- (enum SIS_ErrorCodes)setUserConsentWithType:(NSString * _Nonnull)type timestamp:(int64_t)timestamp enabled:(BOOL)enabled;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_DEPRECATED_MSG("-init is unavailable");
 @end
