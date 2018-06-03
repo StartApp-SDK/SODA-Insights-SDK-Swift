@@ -2,7 +2,7 @@
 
 Pod::Spec.new do |s|
   s.name                    = 'StartAppSodaInsights-swift'
-  s.version                 = '2.3.0'
+  s.version                 = '2.3.1'
   s.summary                 = 'StartApp Soda Insights SDK for iOS (supports the latest Swift version)'
 
   s.description             = <<-DESC
@@ -22,7 +22,7 @@ Pod::Spec.new do |s|
   s.ios.vendored_frameworks = 'SodaInsightsSdk.framework', 'SodaInsightsSdkPrivate.framework'
   s.requires_arc            = true
   s.source                  = { :git => 'https://github.com/StartApp-SDK/SODA-Insights-SDK-Swift.git', :tag => s.version.to_s }
-  s.swift_version           = '4.1'
+  s.swift_version           = '4.1.2'
 
 end
 
